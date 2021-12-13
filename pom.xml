@@ -20,21 +20,6 @@
       <version>3.17.2</version>
     </dependency>
   </dependencies>
-  <properties>
-    <maven.compiler.release>11</maven.compiler.release>
-</properties>
-
-  <build>
-      <pluginManagement>
-          <plugins>
-              <plugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-compiler-plugin</artifactId>
-                  <version>3.8.1</version>
-              </plugin>
-          </plugins>
-      </pluginManagement>
-  </build>
   <repositories>
 		<repository>
 		    <id>jitpack.io</id>
