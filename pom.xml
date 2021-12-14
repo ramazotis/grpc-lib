@@ -4,7 +4,7 @@
   <groupId>io.grpc.examples.server</groupId>
   <artifactId>grpc-lib</artifactId>
   <packaging>jar</packaging>
-  <version>1.7</version>
+  <version>1.8</version>
   <name>grpc-lib</name>
   <url>http://maven.apache.org</url>
   <dependencies>
