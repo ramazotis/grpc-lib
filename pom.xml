@@ -4,7 +4,7 @@
   <groupId>io.grpc.examples.server</groupId>
   <artifactId>grpc-lib</artifactId>
   <packaging>jar</packaging>
-  <version>1.8</version>
+  <version>1.9</version>
   <name>grpc-lib</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -17,6 +17,11 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
+      <version>1.42.1</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
       <version>1.42.1</version>
     </dependency>
     <dependency>
