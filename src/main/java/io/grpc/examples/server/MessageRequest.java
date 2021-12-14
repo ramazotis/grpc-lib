@@ -80,13 +80,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.grpc.examples.server.ServerProtoGrpc.internal_static_process_MessageRequest_descriptor;
+    return io.grpc.examples.server.ServerProto.internal_static_process_MessageRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grpc.examples.server.ServerProtoGrpc.internal_static_process_MessageRequest_fieldAccessorTable
+    return io.grpc.examples.server.ServerProto.internal_static_process_MessageRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.grpc.examples.server.MessageRequest.class, io.grpc.examples.server.MessageRequest.Builder.class);
   }
@@ -143,9 +143,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    //if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+    if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-    //}
+    }
     unknownFields.writeTo(output);
   }
 
@@ -155,9 +155,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    //if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+    if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-    //}
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -296,13 +296,13 @@ private static final long serialVersionUID = 0L;
       io.grpc.examples.server.MessageRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.grpc.examples.server.ServerProtoGrpc.internal_static_process_MessageRequest_descriptor;
+      return io.grpc.examples.server.ServerProto.internal_static_process_MessageRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grpc.examples.server.ServerProtoGrpc.internal_static_process_MessageRequest_fieldAccessorTable
+      return io.grpc.examples.server.ServerProto.internal_static_process_MessageRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grpc.examples.server.MessageRequest.class, io.grpc.examples.server.MessageRequest.Builder.class);
     }
@@ -333,7 +333,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.grpc.examples.server.ServerProtoGrpc.internal_static_process_MessageRequest_descriptor;
+      return io.grpc.examples.server.ServerProto.internal_static_process_MessageRequest_descriptor;
     }
 
     @java.lang.Override

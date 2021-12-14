@@ -87,13 +87,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.grpc.examples.server.ServerProtoGrpc.internal_static_process_MessageReply_descriptor;
+    return io.grpc.examples.server.ServerProto.internal_static_process_MessageReply_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grpc.examples.server.ServerProtoGrpc.internal_static_process_MessageReply_fieldAccessorTable
+    return io.grpc.examples.server.ServerProto.internal_static_process_MessageReply_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.grpc.examples.server.MessageReply.class, io.grpc.examples.server.MessageReply.Builder.class);
   }
@@ -188,12 +188,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    //if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaTopic_)) {
+    if (!getKafkaTopicBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kafkaTopic_);
-    //}
-    //if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+    }
+    if (!getMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
-    //}
+    }
     unknownFields.writeTo(output);
   }
 
@@ -203,12 +203,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    //if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaTopic_)) {
+    if (!getKafkaTopicBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kafkaTopic_);
-    //}
-    //if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+    }
+    if (!getMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
-    //}
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -351,13 +351,13 @@ private static final long serialVersionUID = 0L;
       io.grpc.examples.server.MessageReplyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.grpc.examples.server.ServerProtoGrpc.internal_static_process_MessageReply_descriptor;
+      return io.grpc.examples.server.ServerProto.internal_static_process_MessageReply_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grpc.examples.server.ServerProtoGrpc.internal_static_process_MessageReply_fieldAccessorTable
+      return io.grpc.examples.server.ServerProto.internal_static_process_MessageReply_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grpc.examples.server.MessageReply.class, io.grpc.examples.server.MessageReply.Builder.class);
     }
@@ -390,7 +390,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.grpc.examples.server.ServerProtoGrpc.internal_static_process_MessageReply_descriptor;
+      return io.grpc.examples.server.ServerProto.internal_static_process_MessageReply_descriptor;
     }
 
     @java.lang.Override

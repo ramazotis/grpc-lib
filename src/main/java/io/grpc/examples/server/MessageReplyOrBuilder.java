@@ -3,7 +3,6 @@
 
 package io.grpc.examples.server;
 
-
 public interface MessageReplyOrBuilder extends
     // @@protoc_insertion_point(interface_extends:process.MessageReply)
     com.google.protobuf.MessageOrBuilder {

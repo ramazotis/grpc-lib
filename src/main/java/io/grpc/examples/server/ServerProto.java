@@ -3,9 +3,8 @@
 
 package io.grpc.examples.server;
 
-
-public final class ServerProtoGrpc {
-  private ServerProtoGrpc() {}
+public final class ServerProto {
+  private ServerProto() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -37,9 +36,10 @@ public final class ServerProtoGrpc {
       "\n\014server.proto\022\007process\"\036\n\016MessageReques" +
       "t\022\014\n\004name\030\001 \001(\t\"3\n\014MessageReply\022\022\n\nkafka" +
       "Topic\030\001 \001(\t\022\017\n\007message\030\002 \001(\t2L\n\007Process\022" +
-      "A\n\tnewStub\022\027.process.MessageRequest\032\025." +
-      "process.MessageReply\"\000(\0010\001B,\n\027io.grpc.ex" +
-      "amples.serverB\013ServerProtoGrpcP\001Z\002./b\006proto3"
+      "A\n\tSendReply\022\027.process.MessageRequest\032\025." +
+      "process.MessageReply\"\000(\0010\001B1\n\027io.grpc.ex" +
+      "amples.serverB\013ServerProtoP\001\210\001\001\242\002\003RTGb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
