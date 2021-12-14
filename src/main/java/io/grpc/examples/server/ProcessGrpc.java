@@ -12,7 +12,7 @@ package io.grpc.examples.server;
  */
 public  abstract class ProcessGrpc
     implements com.google.protobuf.Service {
-  protected Process() {}
+  protected ProcessGrpc() {}
 
   public interface Interface {
     /**
