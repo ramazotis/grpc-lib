@@ -11,11 +11,11 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
     value = "by gRPC proto compiler (version 1.42.1)",
     comments = "Source: main/proto/server.proto")
 @io.grpc.stub.annotations.GrpcGenerated
-public final class ProcessGrpc {
+public final class MessageServiceGrpc {
 
-  private ProcessGrpc() {}
+  private MessageServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "process.Process";
+  public static final String SERVICE_NAME = "server.MessageService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<io.grpc.examples.server.MessageRequest,
@@ -29,10 +29,10 @@ public final class ProcessGrpc {
   public static io.grpc.MethodDescriptor<io.grpc.examples.server.MessageRequest,
       io.grpc.examples.server.MessageReply> getSendReplyMethod() {
     io.grpc.MethodDescriptor<io.grpc.examples.server.MessageRequest, io.grpc.examples.server.MessageReply> getSendReplyMethod;
-    if ((getSendReplyMethod = ProcessGrpc.getSendReplyMethod) == null) {
-      synchronized (ProcessGrpc.class) {
-        if ((getSendReplyMethod = ProcessGrpc.getSendReplyMethod) == null) {
-          ProcessGrpc.getSendReplyMethod = getSendReplyMethod =
+    if ((getSendReplyMethod = MessageServiceGrpc.getSendReplyMethod) == null) {
+      synchronized (MessageServiceGrpc.class) {
+        if ((getSendReplyMethod = MessageServiceGrpc.getSendReplyMethod) == null) {
+          MessageServiceGrpc.getSendReplyMethod = getSendReplyMethod =
               io.grpc.MethodDescriptor.<io.grpc.examples.server.MessageRequest, io.grpc.examples.server.MessageReply>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SendReply"))
@@ -41,7 +41,7 @@ public final class ProcessGrpc {
                   io.grpc.examples.server.MessageRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   io.grpc.examples.server.MessageReply.getDefaultInstance()))
-              .setSchemaDescriptor(new ProcessMethodDescriptorSupplier("SendReply"))
+              .setSchemaDescriptor(new MessageServiceMethodDescriptorSupplier("SendReply"))
               .build();
         }
       }
@@ -52,45 +52,45 @@ public final class ProcessGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static ProcessStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<ProcessStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<ProcessStub>() {
+  public static MessageServiceStub newStub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<MessageServiceStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<MessageServiceStub>() {
         @java.lang.Override
-        public ProcessStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new ProcessStub(channel, callOptions);
+        public MessageServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MessageServiceStub(channel, callOptions);
         }
       };
-    return ProcessStub.newStub(factory, channel);
+    return MessageServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static ProcessBlockingStub newBlockingStub(
+  public static MessageServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<ProcessBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<ProcessBlockingStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<MessageServiceBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<MessageServiceBlockingStub>() {
         @java.lang.Override
-        public ProcessBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new ProcessBlockingStub(channel, callOptions);
+        public MessageServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MessageServiceBlockingStub(channel, callOptions);
         }
       };
-    return ProcessBlockingStub.newStub(factory, channel);
+    return MessageServiceBlockingStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static ProcessFutureStub newFutureStub(
+  public static MessageServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<ProcessFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<ProcessFutureStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<MessageServiceFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<MessageServiceFutureStub>() {
         @java.lang.Override
-        public ProcessFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new ProcessFutureStub(channel, callOptions);
+        public MessageServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new MessageServiceFutureStub(channel, callOptions);
         }
       };
-    return ProcessFutureStub.newStub(factory, channel);
+    return MessageServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -98,7 +98,7 @@ public final class ProcessGrpc {
    * The greeting service definition.
    * </pre>
    */
-  public static abstract class ProcessImplBase implements io.grpc.BindableService {
+  public static abstract class MessageServiceImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
@@ -128,16 +128,16 @@ public final class ProcessGrpc {
    * The greeting service definition.
    * </pre>
    */
-  public static final class ProcessStub extends io.grpc.stub.AbstractAsyncStub<ProcessStub> {
-    private ProcessStub(
+  public static final class MessageServiceStub extends io.grpc.stub.AbstractAsyncStub<MessageServiceStub> {
+    private MessageServiceStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected ProcessStub build(
+    protected MessageServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new ProcessStub(channel, callOptions);
+      return new MessageServiceStub(channel, callOptions);
     }
 
     /**
@@ -157,16 +157,16 @@ public final class ProcessGrpc {
    * The greeting service definition.
    * </pre>
    */
-  public static final class ProcessBlockingStub extends io.grpc.stub.AbstractBlockingStub<ProcessBlockingStub> {
-    private ProcessBlockingStub(
+  public static final class MessageServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<MessageServiceBlockingStub> {
+    private MessageServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected ProcessBlockingStub build(
+    protected MessageServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new ProcessBlockingStub(channel, callOptions);
+      return new MessageServiceBlockingStub(channel, callOptions);
     }
   }
 
@@ -175,16 +175,16 @@ public final class ProcessGrpc {
    * The greeting service definition.
    * </pre>
    */
-  public static final class ProcessFutureStub extends io.grpc.stub.AbstractFutureStub<ProcessFutureStub> {
-    private ProcessFutureStub(
+  public static final class MessageServiceFutureStub extends io.grpc.stub.AbstractFutureStub<MessageServiceFutureStub> {
+    private MessageServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected ProcessFutureStub build(
+    protected MessageServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new ProcessFutureStub(channel, callOptions);
+      return new MessageServiceFutureStub(channel, callOptions);
     }
   }
 
@@ -195,10 +195,10 @@ public final class ProcessGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ProcessImplBase serviceImpl;
+    private final MessageServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ProcessImplBase serviceImpl, int methodId) {
+    MethodHandlers(MessageServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -226,32 +226,32 @@ public final class ProcessGrpc {
     }
   }
 
-  private static abstract class ProcessBaseDescriptorSupplier
+  private static abstract class MessageServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    ProcessBaseDescriptorSupplier() {}
+    MessageServiceBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return io.grpc.examples.server.ServerProto.getDescriptor();
+      return io.grpc.examples.server.MessageServiceProtos.getDescriptor();
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("Process");
+      return getFileDescriptor().findServiceByName("MessageService");
     }
   }
 
-  private static final class ProcessFileDescriptorSupplier
-      extends ProcessBaseDescriptorSupplier {
-    ProcessFileDescriptorSupplier() {}
+  private static final class MessageServiceFileDescriptorSupplier
+      extends MessageServiceBaseDescriptorSupplier {
+    MessageServiceFileDescriptorSupplier() {}
   }
 
-  private static final class ProcessMethodDescriptorSupplier
-      extends ProcessBaseDescriptorSupplier
+  private static final class MessageServiceMethodDescriptorSupplier
+      extends MessageServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    ProcessMethodDescriptorSupplier(String methodName) {
+    MessageServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -266,11 +266,11 @@ public final class ProcessGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (ProcessGrpc.class) {
+      synchronized (MessageServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new ProcessFileDescriptorSupplier())
+              .setSchemaDescriptor(new MessageServiceFileDescriptorSupplier())
               .addMethod(getSendReplyMethod())
               .build();
         }
