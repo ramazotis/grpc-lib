@@ -4,7 +4,7 @@
 package io.grpc.examples.server;
 
 public interface MessageRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:server.MessageRequest)
+    // @@protoc_insertion_point(interface_extends:process.MessageRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

@@ -8,11 +8,11 @@ package io.grpc.examples.server;
  * The response message containing the message text
  * </pre>
  *
- * Protobuf type {@code server.MessageReply}
+ * Protobuf type {@code process.MessageReply}
  */
 public final class MessageReply extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:server.MessageReply)
+    // @@protoc_insertion_point(message_implements:process.MessageReply)
     MessageReplyOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use MessageReply.newBuilder() to construct.
@@ -87,13 +87,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.grpc.examples.server.MessageServiceProtos.internal_static_server_MessageReply_descriptor;
+    return io.grpc.examples.server.ServerProto.internal_static_process_MessageReply_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grpc.examples.server.MessageServiceProtos.internal_static_server_MessageReply_fieldAccessorTable
+    return io.grpc.examples.server.ServerProto.internal_static_process_MessageReply_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.grpc.examples.server.MessageReply.class, io.grpc.examples.server.MessageReply.Builder.class);
   }
@@ -188,12 +188,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-   // if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaTopic_)) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaTopic_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kafkaTopic_);
-    //}
-    //if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
-    //}
+    }
     unknownFields.writeTo(output);
   }
 
@@ -203,12 +203,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    //if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaTopic_)) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaTopic_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kafkaTopic_);
-    //}
-    //if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
-    //}
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -343,21 +343,21 @@ private static final long serialVersionUID = 0L;
    * The response message containing the message text
    * </pre>
    *
-   * Protobuf type {@code server.MessageReply}
+   * Protobuf type {@code process.MessageReply}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:server.MessageReply)
+      // @@protoc_insertion_point(builder_implements:process.MessageReply)
       io.grpc.examples.server.MessageReplyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.grpc.examples.server.MessageServiceProtos.internal_static_server_MessageReply_descriptor;
+      return io.grpc.examples.server.ServerProto.internal_static_process_MessageReply_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grpc.examples.server.MessageServiceProtos.internal_static_server_MessageReply_fieldAccessorTable
+      return io.grpc.examples.server.ServerProto.internal_static_process_MessageReply_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grpc.examples.server.MessageReply.class, io.grpc.examples.server.MessageReply.Builder.class);
     }
@@ -390,7 +390,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.grpc.examples.server.MessageServiceProtos.internal_static_server_MessageReply_descriptor;
+      return io.grpc.examples.server.ServerProto.internal_static_process_MessageReply_descriptor;
     }
 
     @java.lang.Override
@@ -661,10 +661,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:server.MessageReply)
+    // @@protoc_insertion_point(builder_scope:process.MessageReply)
   }
 
-  // @@protoc_insertion_point(class_scope:server.MessageReply)
+  // @@protoc_insertion_point(class_scope:process.MessageReply)
   private static final io.grpc.examples.server.MessageReply DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new io.grpc.examples.server.MessageReply();

@@ -37,9 +37,9 @@ public final class ServerProto {
       "ssageRequest\022\014\n\004name\030\001 \001(\t\"3\n\014MessageRep" +
       "ly\022\022\n\nkafkaTopic\030\001 \001(\t\022\017\n\007message\030\002 \001(\t2" +
       "L\n\007Process\022A\n\tSendReply\022\027.process.Messag" +
-      "eRequest\032\025.process.MessageReply\"\000(\0010\001B1\n" +
-      "\027io.grpc.examples.serverB\013ServerProtoP\001\210" +
-      "\001\001\242\002\003RTGb\006proto3"
+      "eRequest\032\025.process.MessageReply\"\000(\0010\001B,\n" +
+      "\027io.grpc.examples.serverB\013ServerProtoP\001Z" +
+      "\002./b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
