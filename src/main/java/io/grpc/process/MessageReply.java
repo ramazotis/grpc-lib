@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private MessageReply() {
+    kafkaTopic_ = "";
     message_ = "";
   }
 
@@ -49,6 +50,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            kafkaTopic_ = s;
+            break;
+          }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -85,6 +92,44 @@ private static final long serialVersionUID = 0L;
     return io.grpc.process.ProcessServiceProtos.internal_static_process_MessageReply_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.grpc.process.MessageReply.class, io.grpc.process.MessageReply.Builder.class);
+  }
+
+  public static final int KAFKATOPIC_FIELD_NUMBER = 1;
+  private volatile java.lang.Object kafkaTopic_;
+  /**
+   * <code>string kafkaTopic = 1;</code>
+   * @return The kafkaTopic.
+   */
+  @java.lang.Override
+  public java.lang.String getKafkaTopic() {
+    java.lang.Object ref = kafkaTopic_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kafkaTopic_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string kafkaTopic = 1;</code>
+   * @return The bytes for kafkaTopic.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getKafkaTopicBytes() {
+    java.lang.Object ref = kafkaTopic_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      kafkaTopic_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 2;
@@ -139,6 +184,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaTopic_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kafkaTopic_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
     }
@@ -151,6 +199,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kafkaTopic_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kafkaTopic_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
     }
@@ -169,6 +220,8 @@ private static final long serialVersionUID = 0L;
     }
     io.grpc.process.MessageReply other = (io.grpc.process.MessageReply) obj;
 
+    if (!getKafkaTopic()
+        .equals(other.getKafkaTopic())) return false;
     if (!getMessage()
         .equals(other.getMessage())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -182,6 +235,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + KAFKATOPIC_FIELD_NUMBER;
+    hash = (53 * hash) + getKafkaTopic().hashCode();
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -317,6 +372,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      kafkaTopic_ = "";
+
       message_ = "";
 
       return this;
@@ -345,6 +402,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.grpc.process.MessageReply buildPartial() {
       io.grpc.process.MessageReply result = new io.grpc.process.MessageReply(this);
+      result.kafkaTopic_ = kafkaTopic_;
       result.message_ = message_;
       onBuilt();
       return result;
@@ -394,6 +452,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.grpc.process.MessageReply other) {
       if (other == io.grpc.process.MessageReply.getDefaultInstance()) return this;
+      if (!other.getKafkaTopic().isEmpty()) {
+        kafkaTopic_ = other.kafkaTopic_;
+        onChanged();
+      }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
         onChanged();
@@ -424,6 +486,82 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object kafkaTopic_ = "";
+    /**
+     * <code>string kafkaTopic = 1;</code>
+     * @return The kafkaTopic.
+     */
+    public java.lang.String getKafkaTopic() {
+      java.lang.Object ref = kafkaTopic_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kafkaTopic_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string kafkaTopic = 1;</code>
+     * @return The bytes for kafkaTopic.
+     */
+    public com.google.protobuf.ByteString
+        getKafkaTopicBytes() {
+      java.lang.Object ref = kafkaTopic_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        kafkaTopic_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string kafkaTopic = 1;</code>
+     * @param value The kafkaTopic to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKafkaTopic(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      kafkaTopic_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string kafkaTopic = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearKafkaTopic() {
+      
+      kafkaTopic_ = getDefaultInstance().getKafkaTopic();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string kafkaTopic = 1;</code>
+     * @param value The bytes for kafkaTopic to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKafkaTopicBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      kafkaTopic_ = value;
+      onChanged();
       return this;
     }
 
