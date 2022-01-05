@@ -8,18 +8,6 @@ public interface MessageReplyOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string kafkaTopic = 1;</code>
-   * @return The kafkaTopic.
-   */
-  java.lang.String getKafkaTopic();
-  /**
-   * <code>string kafkaTopic = 1;</code>
-   * @return The bytes for kafkaTopic.
-   */
-  com.google.protobuf.ByteString
-      getKafkaTopicBytes();
-
-  /**
    * <code>string message = 2;</code>
    * @return The message.
    */

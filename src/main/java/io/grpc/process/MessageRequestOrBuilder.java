@@ -8,12 +8,23 @@ public interface MessageRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string message = 1;</code>
+   * <code>.process.ProcessorType processorType = 1;</code>
+   * @return The enum numeric value on the wire for processorType.
+   */
+  int getProcessorTypeValue();
+  /**
+   * <code>.process.ProcessorType processorType = 1;</code>
+   * @return The processorType.
+   */
+  io.grpc.process.ProcessorType getProcessorType();
+
+  /**
+   * <code>string message = 2;</code>
    * @return The message.
    */
   java.lang.String getMessage();
   /**
-   * <code>string message = 1;</code>
+   * <code>string message = 2;</code>
    * @return The bytes for message.
    */
   com.google.protobuf.ByteString
