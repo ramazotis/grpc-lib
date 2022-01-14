@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private MessageRequest() {
-    processorType_ = 0;
     message_ = "";
   }
 
@@ -50,13 +49,7 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
-
-            processorType_ = rawValue;
-            break;
-          }
-          case 18: {
+          case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
             message_ = s;
@@ -94,29 +87,10 @@ private static final long serialVersionUID = 0L;
             io.grpc.process.MessageRequest.class, io.grpc.process.MessageRequest.Builder.class);
   }
 
-  public static final int PROCESSORTYPE_FIELD_NUMBER = 1;
-  private int processorType_;
-  /**
-   * <code>.process.ProcessorType processorType = 1;</code>
-   * @return The enum numeric value on the wire for processorType.
-   */
-  @java.lang.Override public int getProcessorTypeValue() {
-    return processorType_;
-  }
-  /**
-   * <code>.process.ProcessorType processorType = 1;</code>
-   * @return The processorType.
-   */
-  @java.lang.Override public io.grpc.process.ProcessorType getProcessorType() {
-    @SuppressWarnings("deprecation")
-    io.grpc.process.ProcessorType result = io.grpc.process.ProcessorType.valueOf(processorType_);
-    return result == null ? io.grpc.process.ProcessorType.UNRECOGNIZED : result;
-  }
-
-  public static final int MESSAGE_FIELD_NUMBER = 2;
+  public static final int MESSAGE_FIELD_NUMBER = 1;
   private volatile java.lang.Object message_;
   /**
-   * <code>string message = 2;</code>
+   * <code>string message = 1;</code>
    * @return The message.
    */
   @java.lang.Override
@@ -133,7 +107,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string message = 2;</code>
+   * <code>string message = 1;</code>
    * @return The bytes for message.
    */
   @java.lang.Override
@@ -165,12 +139,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (processorType_ != io.grpc.process.ProcessorType.Nutanix.getNumber()) {
-      output.writeEnum(1, processorType_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
     }
-    //if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
-   // }
     unknownFields.writeTo(output);
   }
 
@@ -180,13 +151,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (processorType_ != io.grpc.process.ProcessorType.Nutanix.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, processorType_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
     }
-   // if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
-   // }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -202,7 +169,6 @@ private static final long serialVersionUID = 0L;
     }
     io.grpc.process.MessageRequest other = (io.grpc.process.MessageRequest) obj;
 
-    if (processorType_ != other.processorType_) return false;
     if (!getMessage()
         .equals(other.getMessage())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -216,8 +182,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PROCESSORTYPE_FIELD_NUMBER;
-    hash = (53 * hash) + processorType_;
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -353,8 +317,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      processorType_ = 0;
-
       message_ = "";
 
       return this;
@@ -383,7 +345,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.grpc.process.MessageRequest buildPartial() {
       io.grpc.process.MessageRequest result = new io.grpc.process.MessageRequest(this);
-      result.processorType_ = processorType_;
       result.message_ = message_;
       onBuilt();
       return result;
@@ -433,9 +394,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.grpc.process.MessageRequest other) {
       if (other == io.grpc.process.MessageRequest.getDefaultInstance()) return this;
-      if (other.processorType_ != 0) {
-        setProcessorTypeValue(other.getProcessorTypeValue());
-      }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
         onChanged();
@@ -469,63 +427,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int processorType_ = 0;
-    /**
-     * <code>.process.ProcessorType processorType = 1;</code>
-     * @return The enum numeric value on the wire for processorType.
-     */
-    @java.lang.Override public int getProcessorTypeValue() {
-      return processorType_;
-    }
-    /**
-     * <code>.process.ProcessorType processorType = 1;</code>
-     * @param value The enum numeric value on the wire for processorType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProcessorTypeValue(int value) {
-      
-      processorType_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.process.ProcessorType processorType = 1;</code>
-     * @return The processorType.
-     */
-    @java.lang.Override
-    public io.grpc.process.ProcessorType getProcessorType() {
-      @SuppressWarnings("deprecation")
-      io.grpc.process.ProcessorType result = io.grpc.process.ProcessorType.valueOf(processorType_);
-      return result == null ? io.grpc.process.ProcessorType.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.process.ProcessorType processorType = 1;</code>
-     * @param value The processorType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProcessorType(io.grpc.process.ProcessorType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      processorType_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.process.ProcessorType processorType = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearProcessorType() {
-      
-      processorType_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object message_ = "";
     /**
-     * <code>string message = 2;</code>
+     * <code>string message = 1;</code>
      * @return The message.
      */
     public java.lang.String getMessage() {
@@ -541,7 +445,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string message = 2;</code>
+     * <code>string message = 1;</code>
      * @return The bytes for message.
      */
     public com.google.protobuf.ByteString
@@ -558,7 +462,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string message = 2;</code>
+     * <code>string message = 1;</code>
      * @param value The message to set.
      * @return This builder for chaining.
      */
@@ -573,7 +477,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string message = 2;</code>
+     * <code>string message = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
@@ -583,7 +487,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string message = 2;</code>
+     * <code>string message = 1;</code>
      * @param value The bytes for message to set.
      * @return This builder for chaining.
      */
