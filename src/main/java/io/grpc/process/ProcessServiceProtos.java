@@ -36,10 +36,10 @@ public final class ProcessServiceProtos {
       "\n\027main/proto/server.proto\022\007process\"!\n\016Me" +
       "ssageRequest\022\017\n\007message\030\001 \001(\t\"3\n\014Message" +
       "Reply\022\022\n\nkafkaTopic\030\001 \001(\t\022\017\n\007message\030\002 \001" +
-      "(\t2T\n\016ProcessService\022B\n\016ProcessMessage\022\027" +
+      "(\t2X\n\016ProcessService\022F\n\016ProcessMessage\022\027" +
       ".process.MessageRequest\032\025.process.Messag" +
-      "eReply\"\000B-\n\017io.grpc.processB\024ProcessServ" +
-      "iceProtosP\001Z\002./b\006proto3"
+      "eReply\"\000(\0010\001B0\n\017io.grpc.processB\024Process" +
+      "ServiceProtosP\001Z\002./\210\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
