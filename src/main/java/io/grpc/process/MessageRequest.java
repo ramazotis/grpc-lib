@@ -141,7 +141,7 @@ private static final long serialVersionUID = 0L;
                       throws java.io.IOException {
     //if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
-   // }
+    //}
     unknownFields.writeTo(output);
   }
 
@@ -151,9 +151,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-   // if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+    //if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
-   // }
+    //}
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
