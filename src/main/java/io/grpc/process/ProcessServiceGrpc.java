@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.42.1)",
+    value = "by gRPC proto compiler (version 1.43.1)",
     comments = "Source: main/proto/server.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProcessServiceGrpc {
@@ -22,7 +22,7 @@ public final class ProcessServiceGrpc {
       fullMethodName = SERVICE_NAME + '/' + "ProcessMessage",
       requestType = io.grpc.process.MessageRequest.class,
       responseType = io.grpc.process.MessageReply.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<io.grpc.process.MessageRequest,
       io.grpc.process.MessageReply> getProcessMessageMethod() {
     io.grpc.MethodDescriptor<io.grpc.process.MessageRequest, io.grpc.process.MessageReply> getProcessMessageMethod;
@@ -31,7 +31,7 @@ public final class ProcessServiceGrpc {
         if ((getProcessMessageMethod = ProcessServiceGrpc.getProcessMessageMethod) == null) {
           ProcessServiceGrpc.getProcessMessageMethod = getProcessMessageMethod =
               io.grpc.MethodDescriptor.<io.grpc.process.MessageRequest, io.grpc.process.MessageReply>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ProcessMessage"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
@@ -96,16 +96,16 @@ public final class ProcessServiceGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<io.grpc.process.MessageRequest> processMessage(
+    public void processMessage(io.grpc.process.MessageRequest request,
         io.grpc.stub.StreamObserver<io.grpc.process.MessageReply> responseObserver) {
-      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getProcessMessageMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getProcessMessageMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getProcessMessageMethod(),
-            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 io.grpc.process.MessageRequest,
                 io.grpc.process.MessageReply>(
@@ -130,10 +130,10 @@ public final class ProcessServiceGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<io.grpc.process.MessageRequest> processMessage(
+    public void processMessage(io.grpc.process.MessageRequest request,
         io.grpc.stub.StreamObserver<io.grpc.process.MessageReply> responseObserver) {
-      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
-          getChannel().newCall(getProcessMessageMethod(), getCallOptions()), responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getProcessMessageMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -150,6 +150,13 @@ public final class ProcessServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new ProcessServiceBlockingStub(channel, callOptions);
     }
+
+    /**
+     */
+    public io.grpc.process.MessageReply processMessage(io.grpc.process.MessageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getProcessMessageMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -164,6 +171,14 @@ public final class ProcessServiceGrpc {
     protected ProcessServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new ProcessServiceFutureStub(channel, callOptions);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.process.MessageReply> processMessage(
+        io.grpc.process.MessageRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getProcessMessageMethod(), getCallOptions()), request);
     }
   }
 
@@ -186,6 +201,10 @@ public final class ProcessServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_PROCESS_MESSAGE:
+          serviceImpl.processMessage((io.grpc.process.MessageRequest) request,
+              (io.grpc.stub.StreamObserver<io.grpc.process.MessageReply>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -196,9 +215,6 @@ public final class ProcessServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_PROCESS_MESSAGE:
-          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.processMessage(
-              (io.grpc.stub.StreamObserver<io.grpc.process.MessageReply>) responseObserver);
         default:
           throw new AssertionError();
       }
