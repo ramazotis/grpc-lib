@@ -153,7 +153,7 @@ private static final long serialVersionUID = 0L;
     size = 0;
     //if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
-    //}
+   // }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
